@@ -1,3 +1,16 @@
 <mat-card>
+  {{ gameId$ | async }}
+</mat-card>
+
+<div class="container">
+  <div class="games-layout">
+    <mat-card
+      class="game-card"
+      *ngFor="let game of games"
+      [routerLink]="['/game', game.id]"
+    >
     {{ gameId$ | async }}
   </mat-card>
+  </div>
+  <router-outlet></router-outlet>
+</div>

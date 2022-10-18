@@ -1,1 +1,10 @@
 d60ba59fa4f82e4fd5a20052524cbfcb
+
+
+Creating OAuth Authorization... done
+Client:      <none>
+ID:          c4008e20-0392-45b0-9502-796d1be32575
+Description: Long-lived user authorization
+Scope:       global
+Token:       918f5ba3-3aa3-43c8-bf95-3ee95d9b3453
+Updated at:  Tue Oct 18 2022 15:06:24 GMT-0700 (Mountain Standard Time) (less than a minute ago)

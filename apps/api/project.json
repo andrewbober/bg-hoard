@@ -13,7 +13,14 @@
         "outputPath": "dist/apps/api",
         "main": "apps/api/src/main.ts",
         "tsConfig": "apps/api/tsconfig.app.json",
-        "assets": ["apps/api/src/assets"]
+        "assets": [
+          "apps/api/src/assets",
+          {
+            "glob": "Dockerfile",
+            "input": "apps/api",
+            "output": "."
+          }
+        ]
       },
       "configurations": {
         "production": {
@@ -25,7 +32,16 @@
               "replace": "apps/api/src/environments/environment.ts",
               "with": "apps/api/src/environments/environment.prod.ts"
             }
-          ]
+          ],
+          "externalDependencies": [
+            "@nestjs/microservices",
+            "@nestjs/microservices/microservices-module",
+            "@nestjs/websockets/socket-module",
+            "class-transformer",
+            "class-validator",
+            "cache-manager",
+            "cache-manager/package.json"
+          ]        
         }
       }
     },
@@ -54,6 +70,17 @@
         "jestConfig": "apps/api/jest.config.ts",
         "passWithNoTests": true
       }
+    },
+    "deploy": {
+      "executor": "@bg-hoard/internal-plugin:heroku-deploy",
+      "outputs": [],
+      "options": {
+        "distLocation": "dist/apps/api",
+        "herokuAppName": "bghoard"
+      },
+      "dependsOn": [
+        { "target": "build", "projects": "self", "params": "forward" }
+      ]
     }
   },
   "tags": ["scope:api", "type:app"],

@@ -12,7 +12,7 @@
           "e2e",
           "build-storybook"
         ],
-        "accessToken": "YzVjODJhZGYtMDBlNy00ZmFkLWJkYTgtODA3OGUzYmEyMmNkfHJlYWQtd3JpdGU="
+        "accessToken": "MGE1ZDQ4MzUtNzQzYy00MDYxLTkwZDAtNmE4MDlkZjIwMGFkfHJlYWQtd3JpdGU="
       }
     }
   },
@@ -52,6 +52,7 @@
         "{workspaceRoot}/.storybook/**/*",
         "{workspaceRoot}/.storybook/**/*",
         "{workspaceRoot}/.storybook/**/*",
+        "{workspaceRoot}/.storybook/**/*",
         "{workspaceRoot}/.storybook/**/*"
       ]
     }
@@ -67,6 +68,8 @@
       "!{projectRoot}/tsconfig.spec.json",
       "!{projectRoot}/jest.config.[jt]s",
       "!{projectRoot}/.eslintrc.json",
+      "!{projectRoot}/.storybook/**/*",
+      "!{projectRoot}/**/*.stories.@(js|jsx|ts|tsx|mdx)",
       "!{projectRoot}/.storybook/**/*",
       "!{projectRoot}/**/*.stories.@(js|jsx|ts|tsx|mdx)",
       "!{projectRoot}/.storybook/**/*",
@@ -93,5 +96,8 @@
       "style": "scss"
     }
   },
-  "defaultProject": "store"
+  "defaultProject": "store",
+  "implicitDependencies": {
+    ".github/workflows/ci.yml": "*"
+  }
 }

@@ -71,5 +71,5 @@
       "style": "scss"
     }
   },
-  "defaultProject": "store"
+  "defaultProject": "api"
 }
